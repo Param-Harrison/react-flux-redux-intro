@@ -1,5 +1,5 @@
 # React + Flux + Redux Workshop
-- https://param-harrison.github.io/react-workshop/
+- https://param-harrison.github.io/react-flux-redux-intro/
 
 # References
 - [React Intro](https://blog.andrewray.me/reactjs-for-stupid-people/)
