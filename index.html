@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>React + Flux + Redux</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+    <link rel="shortcut icon" href="//jobbatical.com/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <article>
+      <section>
+        <h1 style="margin-bottom: 50px">React + Flux + Redux Basics</h1>
+        <div class="social"><img src="./images/github.png">
+          <h4>Param-Harrison</h4>
+        </div><img src="//jobbatical.com/img/jb_logo_white.svg" style="width: 170px; margin-top: 70px">
+      </section>
+      <section data-bespoke-backdrop="react">
+        <h1>Meet<b>  React</b></h1><br>
+        <h3>A JavaScript Library for Building User Interfaces</h3>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic-text">
+        <h2>React is only the view layer</h2>
+      </section>
+      <section>
+        <h2 class="emphasis">Virtual DOM</h2>
+      </section>
+      <section class="virtual-dom">
+        <h2 class="virtual-dom-steps"></h2><img src="./images/dom1.png" class="dom-1"><img src="./images/dom.png" class="substep dom-2"><img src="./images/dom3.png" class="substep dom-3">
+        <div class="substep dom-4">
+          <div class="dom-operation"><span style="-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;" class="dom-operation__header"></span><span style="-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;" class="dom-operation__body"></span></div>
+          <div style="top: 50px" class="dom-operation"><span style="-webkit-animation-delay: 1.0s; -moz-animation-delay: 1.0s; animation-delay: 1.0s;" class="dom-operation__header"></span><span style="-webkit-animation-delay: 1.0s; -moz-animation-delay: 1.0s; animation-delay: 1.0s;" class="dom-operation__body"></span></div>
+          <div style="top: 100px" class="dom-operation"><span style="-webkit-animation-delay: 1.2s; -moz-animation-delay: 1.2s; animation-delay: 1.2s;" class="dom-operation__header"></span><span style="-webkit-animation-delay: 1.2s; -moz-animation-delay: 1.2s; animation-delay: 1.2s;" class="dom-operation__body"></span></div>
+          <div style="top: 150px" class="dom-operation"><span style="-webkit-animation-delay: 1.4s; -moz-animation-delay: 1.4s; animation-delay: 1.4s;" class="dom-operation__header"></span><span style="-webkit-animation-delay: 1.4s; -moz-animation-delay: 1.4s; animation-delay: 1.4s;" class="dom-operation__body"></span></div>
+        </div>
+        <div class="substep dom-5"><img src="./images/osx-browser.png" class="osx-browser"><img src="./images/dom.png" class="dom-tree"></div>
+      </section>
+      <section data-bespoke-backdrop="code-matrix">
+        <h2 class="emphasis">What about the code?</h2>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="create-react-app emphatic-text">
+        <h2>Create-react-app</h2>
+        <h3>Create React apps with no build configuration.</h3>
+        <pre><code class="language-javascript">// Install it globally
+npm install -g create-react-app
+
+// Creates new React app
+create-react-app my-app
+
+cd my-app
+
+// Runs app in development mode. 
+// Server listening on localhost:8080
+npm start 
+
+// Builds the app for production
+npm run build
+</code></pre>
+      </section>
+      <section>
+        <h2>Render method</h2>
+        <h3>Render a React Element into the DOM</h3>
+        <pre><code class="language-javascript">ReactDOM.render(
+  &#60;h1&#62;Hello world!&#60;/h1&#62;, // Element
+  document.getElementById('root') // Root node container
+);
+</code></pre>
+      </section>
+      <section class="codepen">
+        <h2>Our first component</h2>
+        <p data-height="750" data-theme-id="dark" data-slug-hash="QMRgmN" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen<a href="https://codepen.io/Param-Harrison/pen/QMRgmN">React Render Method - Example</a> by Param-Harrison (<a href="https://codepen.io/Param-Harrison">@Param-Harrison</a>) on<a href="http://codepen.io">CodePen</a>.</p>
+        <script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+      </section>
+      <section>
+        <h2>Components</h2>
+        <h3>Fundamental block of UI</h3>
+        <pre><code class="language-javascript">React.createClass({
+    render: function() {
+      return &#60;h1&#62;Hello world!&#60;/h1&#62;
+    }
+});
+</code></pre>
+      </section>
+      <section>
+        <h3>- A React Component let you split the UI into independent, reusable pieces, and think about each piece in isolation.</h3>
+      </section>
+      <section class="code-with-title">
+        <h2>Component definition</h2>
+        <div class="code-container">
+          <div>
+            <h4>Using createClass method</h4>
+            <pre><code class="language-javascript">var Title = React.createClass({
+    render: function() {
+      return &#60;h1&#62;Hello world!&#60;/h1&#62;
+    }
+});</code></pre>
+          </div>
+          <div>
+            <h4>Using ES6 classes</h4>
+            <pre><code class="language-javascript">class Title extends React.Component {
+  render() {
+    return &#60;h1&#62;Hello world!&#60;/h1&#62;
+  }
+}</code></pre><span class="side-note">ES6 way is preferable combined with Webpack</span>
+          </div>
+        </div>
+      </section>
+      <section class="code-with-title">
+        <h2>To sum up</h2>
+        <div class="code-container">
+          <div>
+            <h4>Create the component</h4>
+            <pre><code class="language-javascript">var Title = React.createClass({
+    render: function() {
+      return &#60;h1&#62;Hello world!&#60;/h1&#62;
+    }
+});</code></pre>
+          </div>
+          <div>
+            <h4>And render it into the DOM</h4>
+            <pre><code class="language-javascript">ReactDOM.render(
+  &#60;Title/&#62;,
+  document.getElementById('root')
+);
+</code></pre>
+          </div>
+        </div>
+      </section>
+      <section class="codepen">
+        <h2>Our first component</h2>
+        <p data-height="750" data-theme-id="dark" data-slug-hash="MvdoEJ" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen<a href="https://codepen.io/Param-Harrison/pen/MvdoEJ">React Simple Component</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on<a href="http://codepen.io">CodePen</a>.</p>
+        <script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic-text">
+        <h3 style="opacity: 0.7">That's great, but...</h3>
+        <h2>Is that HTML inside our JS?</h2>
+      </section>
+      <section>
+        <h2>JSX</h2>
+        <h3><b>Not exactly,</b> It's preprocessor with HTML-like syntax. More like EJS, HAML, Handlebar templates</h3>
+      </section>
+      <section class="code">
+        <pre><code class="language-javascript">React.createClass({
+    render: function() {
+      return &#60;h1&#62;Hello world!&#60;/h1&#62;
+    }
+});</code></pre>
+        <div style="margin:20px">⟹</div>
+        <pre><code class="language-javascript">React.createClass({
+    render: function() {
+      return React.createElement(
+          'h1', // Element type
+          null, // Props
+          "Hello world!" // Children
+      )
+    }
+});
+</code></pre>
+      </section>
+      <section>
+        <h2>JSX Gotchas</h2><br>
+        <div class="gotcha-icons"><span>🚫</span><span>✅</span></div>
+        <div class="gotcha"><span class="bad"><span>&#60;h1 <span class="gotcha-highlight">class</span>="foo">Hello, world</span></span><span class="arrow">⟹</span><span class="good"><span>&#60;h1 <span class="gotcha-highlight">className</span>="foo">Hello, world</span></span></div>
+        <div class="gotcha"><span class="bad"><span>&#60;label <span class="gotcha-highlight">for</span>="some-input">Inpu</span></span><span class="arrow">⟹</span><span class="good"><span>&#60;label <span class="gotcha-highlight">htmlFor</span>="some-input">Inpu</span></span></div>
+      </section>
+      <section>
+        <h2>Component props</h2>
+      </section>
+      <section class="code-with-title">
+        <h3><b>Read-only</b> properties passed to a React Component via its attributes</h3>
+        <h3>We can access these properties inside the components via the <b>this.props</b> object</h3>
+        <div class="code-container--centered">
+          <pre><code class="language-javascript">&#60;Title 
+  color="red" 
+  fontSize="2em"
+  hidden={true}
+  /&#62;</code></pre>
+          <div style="margin:20px">⟹</div>
+          <pre><code class="language-javascript">this.props = {
+  color: 'red',
+  fontSize: '2em',
+  hidden: true,
+  // ...
+}
+</code></pre>
+        </div>
+      </section>
+      <section class="code-with-title">
+        <h2>PropTypes</h2>
+        <h3>They define what props your Component needs and what type(s) they should be</h3>
+        <h3>The <i>isRequired</i> property tells that the property is required for the Component to work</h3>
+        <div class="code-container">
+          <div>
+            <h4>Using createClass method</h4>
+            <pre><code class="language-javascript">var Series = React.createClass({
+  propTypes: {
+    name: React.PropTypes.string.isRequired,
+    seasons: React.PropTypes.number
+  },
+  
+  render: function() { /* ... */ }
+});</code></pre>
+          </div>
+          <div>
+            <h4>Using ES6 classes</h4>
+            <pre><code class="language-javascript">class Series extends React.Component {
+  render() { /* ... */ }
+}
+
+Series.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  seasons: React.PropTypes.number
+}
+</code></pre>
+          </div>
+        </div>
+      </section>
+      <section class="code-with-title">
+        <div class="code-container">
+          <div>
+            <h4>JS primitive types</h4>
+            <ul>
+              <li>array</li>
+              <li>bool</li>
+              <li>func</li>
+              <li>number</li>
+              <li>object</li>
+              <li>string</li>
+              <li>symbol</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Others</h4>
+            <ul>
+              <li>node</li>
+              <li>element</li>
+              <li>instanceOf()</li>
+              <li>oneOf([])</li>
+              <li>oneOfType([])</li>
+              <li>arrayOf()</li>
+              <li>objectOf()</li>
+              <li>shape({})</li>
+              <li>any</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="code-with-title">
+        <h2>DefaultProps</h2>
+        <h3>They define props default values in case they are not passed in</h3>
+        <div class="code-container">
+          <div>
+            <h4>Using createClass method</h4>
+            <pre><code class="language-javascript">var Series = React.createClass({
+  defaultProps: {
+    name: 'Game of Thrones'
+    seasons: 1
+  },
+  
+  render: function() { /* ... */ }
+});</code></pre>
+          </div>
+          <div>
+            <h4>Using ES6 classes</h4>
+            <pre><code class="language-javascript">class Series extends React.Component {
+  render() { /* ... */ }
+}
+
+Series.defaultProps = {
+  name: 'Game of Thrones'
+  seasons: 1
+}
+</code></pre>
+          </div>
+        </div>
+      </section>
+      <section class="codepen">
+        <p data-height="750" data-theme-id="dark" data-slug-hash="mMYMbd" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/mMYMbd/">React Props - Example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      </section>
+      <section>
+        <h2>Component state</h2>
+      </section>
+      <section class="code-with-title">
+        <h2>Initial state</h2>
+        <div class="code-container">
+          <div>
+            <h4>Using createClass method</h4>
+            <pre><code class="language-javascript">var Series = React.createClass({
+  getInitialState: function() {
+    return {
+      likes: 0,
+      // ...
+    }
+  },
+  render: function() { /* ... */ }
+});</code></pre>
+          </div>
+          <div>
+            <h4>Using ES6 classes</h4>
+            <pre><code class="language-javascript">class Series extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      likes: 0,
+      //...
+    }
+  }
+  render() { /* ... */ }
+}
+</code></pre>
+          </div>
+        </div>
+      </section>
+      <section class="code-with-title">
+        <h2>Change component state</h2>
+        <div class="code-container set-state">
+          <div class="set-state-column">
+            <h4>setState Method</h4>
+            <pre><code class="language-javascript">this.setState(nextState);
+</code></pre>
+            <ul>
+              <li>Primary method to trigger UI updates unless <b>shouldComponentUpdate()</b> is false</li>
+              <li><b>Merge</b> the nextState into current state</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Example</h4>
+            <pre><code class="language-javascript">var Series = React.createClass({
+  getInitialState: function() {
+    return { likes: 0, /* ... */ }
+  },
+  like: function() {
+    this.setState({
+      likes: this.state.likes + 1
+    })
+  },
+  //...
+});
+</code></pre>
+          </div>
+        </div>
+      </section>
+      <section class="codepen">
+        <p data-height="750" data-theme-id="dark" data-slug-hash="NvVwON" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/NvVwON/">React State - Example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      </section>
+      <section>
+        <h2>Component lifecycle</h2>
+      </section>
+      <section class="code-with-title lifecycle">
+        <div class="code-container">
+          <div>
+            <h4>Lifecycle callbacks</h4>
+            <div class="lifecycle-callbacks">
+              <pre class="bullet"><code class="language-javascript">class component extends React.Component {  </code></pre>
+              <pre class="bullet"><code class="language-javascript">// called before the render method is executed
+componentWillMount() { /* ... */ },</code></pre>
+              <pre class="bullet"><code class="language-javascript">// called as soon as the render method is executed
+componentDidMount() { /* ... */ },</code></pre>
+              <pre class="bullet"><code class="language-javascript">// called first when props or state changed
+componentWillReceiveProps(nextProps) { /* ... */ },</code></pre>
+              <pre class="bullet"><code class="language-javascript">// if a re-rendering is needed or can be skipped
+shouldComponentUpdate(nextProps, nextState) { /* ... */ },</code></pre>
+              <pre class="bullet"><code class="language-javascript">// called as soon as the `shouldComponentUpdate` return true
+componentWillUpdate(nextProps, nextState) { /* ... */ },</code></pre>
+              <pre class="bullet"><code class="language-javascript">componentDidUpdate(nextProps, nextState) { /* ... */ },</code></pre>
+              <pre class="bullet"><code class="language-javascript">componentWillUnmount() { /* ... */ },</code></pre>
+              <pre><code class="language-javascript">render() { /* ... */ }</code></pre>
+              <pre><code class="language-javascript">};
+</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="codepen">
+        <p data-height="750" data-theme-id="dark" data-slug-hash="qXGpaw" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/qXGpaw/">React Lifecycle - Example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      </section>
+      <section>
+        <h2>Flux</h2><br>
+        <h3>Flux is more of a pattern than a framework</h3>
+      </section>
+      <section data-bespoke-backdrop="light">
+        <h2 class="light">Data flow</h2><br><img src="./images/flux.png">
+      </section>
+      <section data-bespoke-backdrop="light" class="flux">
+        <div class="bullet">
+          <h2 class="light">Flux cartoon guide by @linclark</h2><br><img src="./images/flux0.png">
+        </div>
+        <div class="bullet">
+          <h2 class="light">User triggers an action</h2><br><img src="./images/flux1.png">
+        </div>
+        <div class="bullet">
+          <h2 class="light">View tells the Action Creator to prepare the action</h2><br><img src="./images/flux2.png">
+        </div>
+        <div class="bullet">
+          <h2 class="light">Action Creator formats the action and dispatch it</h2><br><img src="./images/flux3.png">
+        </div>
+        <div class="bullet">
+          <h2 class="light">Dispatcher sends the action to the stores</h2><br><img src="./images/flux4.png">
+        </div>
+        <div class="bullet">
+          <h2 class="light">Stores change the state and notifiy subscribed views controllers</h2><br><img src="./images/flux5.png">
+        </div>
+        <div class="bullet">
+          <h2 class="light">View Controller ask for new state and updates the view</h2><br><img src="./images/flux6.png">
+        </div>
+      </section>
+      <section class="codepen">
+        <p data-height="750" data-theme-id="dark" data-slug-hash="prmpdL" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/prmpdL/">React + Flux - Example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>`
+      </section>
+      <section data-bespoke-backdrop="redux">
+        <h1>Meet<b>  Redux</b></h1><br>
+        <h3>Single source of truth</h3>
+      </section>
+      <section>
+        <h2>1st principle of Redux</h2>
+        <h3>The whole state of your app is stored in an object tree inside a single store</h3>
+      </section>
+      <section style="height: 600px">
+        <h3>State</h3>
+        <pre><code class="language-javascript">{
+  SeriesArray: [
+    {
+      id: 1,
+      name: 'Game of Thrones',
+      seasons: 6,
+      likes: 0
+    },
+    // ...
+  ]
+}
+</code></pre>
+      </section>
+      <section>
+        <h2>2nd principle of Redux</h2>
+        <h3>The state is <b>read-only</b>. The only way to change the state tree is to emit an action, an object describing what happened.</h3>
+      </section>
+      <section>
+        <h2>Action</h2>
+        <h3>Minimal representation of a state change</h3>
+        <pre><code class="language-javascript">{
+  type: 'LIKE', // Type is mandatory
+  Series_id: 1,
+  // ...
+}
+</code></pre>
+      </section>
+      <section>
+        <h2>3rd principle of Redux - Reducer function</h2>
+        <h3><b>Pure</b> function that describes how the state mutates based on the given action</h3>
+      </section>
+      <section class="code-with-title">
+        <h2>Pure functions</h2>
+        <h3>1 - Output depends only on the given arguments</h3>
+        <h3>2 - Function doesn't mutate arguments</h3>
+        <div class="code-container--centered">
+          <div style="position:relative; margin-right:20px">
+            <div style="position: absolute; font-size: 56px; top: -20px; left: -20px;">🚫</div>
+            <pre style="width:450px; height:172px"><code class="language-javascript">function append(array, item) {
+  item = api_call(item);
+  return array.push(item);
+}</code></pre>
+          </div>
+          <div style="position: relative; margin-left:20px">
+            <div style="position: absolute; font-size: 52px; top: -20px; left: -20px;">✅</div>
+            <pre style="width:450px; height:172px"><code class="language-javascript">function append(array, item) {
+  return array.concat(item);
+}
+</code></pre>
+          </div>
+        </div>
+      </section>
+      <section class="reducer">
+        <div class="bullet">
+          <h3>Array.reduce((accumulator, value) => accumulator)</h3>
+        </div>
+        <div class="bullet">
+          <h3><span class="clear">Array.</span><span>reduce</span><span class="clear">(</span><span>(accumulator, value) => accumulator</span><span class="clear">)</span></h3>
+        </div>
+        <div class="bullet">
+          <h3>reducer(state, action) => state</h3>
+        </div>
+      </section>
+      <section>
+        <pre><code class="language-javascript">const reducer = (state = 0, action) => {
+  switch(action.type) {
+    case 'LIKE':
+      return state + action.increment
+    default:
+      return state;
+  }
+}
+</code></pre>
+      </section>
+      <section>
+        <h2>Store</h2>
+        <h3>Binds Redux principles into one object</h3>
+        <pre><code class="language-javascript">const store = Redux.createStore(reducer)
+</code></pre>
+      </section>
+      <section>
+        <h2>Store main methods</h2>
+        <h3>getState()</h3>
+        <p class="secondary"><b>Returns:</b> current state</p>
+        <h3>dispatch(action)</h3>
+        <div class="secondary">
+          <p><b>Arguments</b>: action to be dispatched</p>
+          <p><b>Returns:</b> dispatched action</p>
+        </div>
+        <h3>subscribe(callback)</h3>
+        <p class="secondary"><b>Arguments</b>: callback that will be called any time an action is dispatched</p>
+      </section>
+      <section class="codepen">
+        <p data-height="750" data-theme-id="dark" data-slug-hash="EvzQPx" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/EvzQPx/">React + Redux example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      </section>
+      <section>
+        <h2>Simple Todo App - React + Redux </h2>
+      </section>
+      <section class="codepen">
+        <p data-height="750" data-theme-id="dark" data-slug-hash="ayrqVN" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/ayrqVN/">React + Redux example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      </section>
+      <section>
+        <h2>Thanks!</h2>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
