@@ -1,0 +1,615 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title React + Flux + Redux
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+    link(rel="shortcut icon", href="//jobbatical.com/img/favicon.ico", type="image/x-icon")
+  body
+    article
+      section
+        h1(style="margin-bottom: 50px") React + Flux + Redux Basics
+        
+        div.social
+          img(src="./images/github.png")
+          h4 Param-Harrison
+          
+        img(src="//jobbatical.com/img/jb_logo_white.svg" style="width: 170px; margin-top: 70px")
+      
+      section(data-bespoke-backdrop='react')
+        h1
+          | Meet
+          b   React
+        br
+        h3 A JavaScript Library for Building User Interfaces
+      
+      section.emphatic-text(data-bespoke-backdrop='emphatic')
+        h2 React is only the view layer
+        
+      section
+        h2.emphasis Virtual DOM
+        
+      section.virtual-dom
+        h2.virtual-dom-steps
+        img.dom-1(src='./images/dom1.png')
+        img.substep.dom-2(src='./images/dom.png')
+        img.substep.dom-3(src='./images/dom3.png')
+        .substep.dom-4
+          .dom-operation
+            span.dom-operation__header(style='-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;')
+            span.dom-operation__body(style='-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;')
+          .dom-operation(style='top: 50px')
+            span.dom-operation__header(style='-webkit-animation-delay: 1.0s; -moz-animation-delay: 1.0s; animation-delay: 1.0s;')
+            span.dom-operation__body(style='-webkit-animation-delay: 1.0s; -moz-animation-delay: 1.0s; animation-delay: 1.0s;')
+          .dom-operation(style='top: 100px')
+            span.dom-operation__header(style='-webkit-animation-delay: 1.2s; -moz-animation-delay: 1.2s; animation-delay: 1.2s;')
+            span.dom-operation__body(style='-webkit-animation-delay: 1.2s; -moz-animation-delay: 1.2s; animation-delay: 1.2s;')
+          .dom-operation(style='top: 150px')
+            span.dom-operation__header(style='-webkit-animation-delay: 1.4s; -moz-animation-delay: 1.4s; animation-delay: 1.4s;')
+            span.dom-operation__body(style='-webkit-animation-delay: 1.4s; -moz-animation-delay: 1.4s; animation-delay: 1.4s;')
+        .substep.dom-5
+          img.osx-browser(src='./images/osx-browser.png')
+          img.dom-tree(src='./images/dom.png')
+      
+      section(data-bespoke-backdrop='code-matrix')
+        h2.emphasis What about the code?
+        
+      section.create-react-app.emphatic-text(data-bespoke-backdrop='emphatic')
+        h2 Create-react-app
+        h3 Create React apps with no build configuration.
+        pre
+          code.language-javascript.
+            // Install it globally
+            npm install -g create-react-app
+            
+            // Creates new React app
+            create-react-app my-app
+              
+            cd my-app
+            
+            // Runs app in development mode. 
+            // Server listening on localhost:8080
+            npm start 
+            
+            // Builds the app for production
+            npm run build
+            
+      section
+        h2 Render method
+        h3 Render a React Element into the DOM
+        pre
+          code.language-javascript.
+            ReactDOM.render(
+              &#60;h1&#62;Hello world!&#60;/h1&#62;, // Element
+              document.getElementById('root') // Root node container
+            );
+            
+      section.codepen
+        h2 Our first component
+        p.codepen(data-height='750', data-theme-id='dark', data-slug-hash='QMRgmN', data-default-tab='js,result', data-user='Param-Harrison', data-embed-version='2')
+          | See the Pen
+          a(href='https://codepen.io/Param-Harrison/pen/QMRgmN') React Render Method - Example
+          |  by Param-Harrison (
+          a(href='https://codepen.io/Param-Harrison') @Param-Harrison
+          | ) on
+          a(href='http://codepen.io') CodePen
+          | .
+        script(async='', src='//assets.codepen.io/assets/embed/ei.js')
+
+      section
+        h2 Components
+        h3 Fundamental block of UI
+        pre
+          code.language-javascript.
+            React.createClass({
+                render: function() {
+                  return &#60;h1&#62;Hello world!&#60;/h1&#62;
+                }
+            });
+      
+      section
+        h3
+          | - A React Component let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+        
+      section.code-with-title
+        h2 Component definition
+        .code-container
+          div
+            h4 Using createClass method
+            pre
+              code.language-javascript.
+                var Title = React.createClass({
+                    render: function() {
+                      return &#60;h1&#62;Hello world!&#60;/h1&#62;
+                    }
+                });
+          div
+            h4 Using ES6 classes
+            pre
+              code.language-javascript.
+                class Title extends React.Component {
+                  render() {
+                    return &#60;h1&#62;Hello world!&#60;/h1&#62;
+                  }
+                }
+            span.side-note ES6 way is preferable combined with Webpack
+      
+      section.code-with-title
+        h2 To sum up
+        .code-container
+          div
+            h4 Create the component
+            pre
+              code.language-javascript.
+                var Title = React.createClass({
+                    render: function() {
+                      return &#60;h1&#62;Hello world!&#60;/h1&#62;
+                    }
+                });
+          div
+            h4 And render it into the DOM
+            pre
+              code.language-javascript.
+                ReactDOM.render(
+                  &#60;Title/&#62;,
+                  document.getElementById('root')
+                );
+      
+      section.codepen
+        h2 Our first component
+        p.codepen(data-height='750', data-theme-id='dark', data-slug-hash='MvdoEJ', data-default-tab='js,result', data-user='Param-Harrison', data-embed-version='2')
+          | See the Pen
+          a(href='https://codepen.io/Param-Harrison/pen/MvdoEJ') React Simple Component
+          |  by Param-Harrison (
+          a(href='http://codepen.io/Param-Harrison') @Param-Harrison
+          | ) on
+          a(href='http://codepen.io') CodePen
+          | .
+        script(async='', src='//assets.codepen.io/assets/embed/ei.js')
+      
+      section.emphatic-text(data-bespoke-backdrop='emphatic')
+        h3(style='opacity: 0.7') That's great, but...
+        h2 Is that HTML inside our JS?
+      
+      section
+        h2 JSX
+        h3
+          b Not exactly,
+          |  It's preprocessor with HTML-like syntax. More like EJS, HAML, Handlebar templates
+      
+      section.code
+        pre
+          code.language-javascript.
+            React.createClass({
+                render: function() {
+                  return &#60;h1&#62;Hello world!&#60;/h1&#62;
+                }
+            });
+        div(style='margin:20px') ⟹
+        pre
+          code.language-javascript.
+            React.createClass({
+                render: function() {
+                  return React.createElement(
+                      'h1', // Element type
+                      null, // Props
+                      "Hello world!" // Children
+                  )
+                }
+            });
+      
+      section
+        h2 JSX Gotchas
+        br
+        .gotcha-icons
+          span 🚫
+          span ✅
+        .gotcha
+          span.bad
+            <span>&#60;h1 <span class="gotcha-highlight">class</span>="foo">Hello, world</span>
+          span.arrow ⟹
+          span.good
+            <span>&#60;h1 <span class="gotcha-highlight">className</span>="foo">Hello, world</span>
+        .gotcha
+          span.bad
+            <span>&#60;label <span class="gotcha-highlight">for</span>="some-input">Inpu</span>
+          span.arrow ⟹
+          span.good
+            <span>&#60;label <span class="gotcha-highlight">htmlFor</span>="some-input">Inpu</span>
+            
+      section
+        h2 Component props
+      
+      section.code-with-title
+        h3 <b>Read-only</b> properties passed to a React Component via its attributes
+        h3 We can access these properties inside the components via the <b>this.props</b> object
+        .code-container--centered
+          pre
+            code.language-javascript.
+              &#60;Title 
+                color="red" 
+                fontSize="2em"
+                hidden={true}
+                /&#62;
+          div(style='margin:20px') ⟹
+          pre
+            code.language-javascript.
+              this.props = {
+                color: 'red',
+                fontSize: '2em',
+                hidden: true,
+                // ...
+              }
+            
+      section.code-with-title
+        h2 PropTypes
+        h3 They define what props your Component needs and what type(s) they should be
+        h3 The <i>isRequired</i> property tells that the property is required for the Component to work
+        .code-container
+          div
+            h4 Using createClass method
+            pre
+              code.language-javascript.
+                var Series = React.createClass({
+                  propTypes: {
+                    name: React.PropTypes.string.isRequired,
+                    seasons: React.PropTypes.number
+                  },
+                  
+                  render: function() { /* ... */ }
+                });
+          div
+            h4 Using ES6 classes
+            pre
+              code.language-javascript.
+                class Series extends React.Component {
+                  render() { /* ... */ }
+                }
+                
+                Series.propTypes = {
+                  name: React.PropTypes.string.isRequired,
+                  seasons: React.PropTypes.number
+                }
+            
+      section.code-with-title
+        div.code-container
+          div
+            h4 JS primitive types
+            ul
+              li array
+              li bool
+              li func
+              li number
+              li object
+              li string
+              li symbol
+          div
+            h4 Others
+            ul
+              li node
+              li element
+              li instanceOf()
+              li oneOf([])
+              li oneOfType([])
+              li arrayOf()
+              li objectOf()
+              li shape({})
+              li any
+    
+      section.code-with-title
+        h2 DefaultProps
+        h3 They define props default values in case they are not passed in
+        .code-container
+          div
+            h4 Using createClass method
+            pre
+              code.language-javascript.
+                var Series = React.createClass({
+                  defaultProps: {
+                    name: 'Game of Thrones'
+                    seasons: 1
+                  },
+                  
+                  render: function() { /* ... */ }
+                });
+          div
+            h4 Using ES6 classes
+            pre
+              code.language-javascript.
+                class Series extends React.Component {
+                  render() { /* ... */ }
+                }
+                
+                Series.defaultProps = {
+                  name: 'Game of Thrones'
+                  seasons: 1
+                }
+      
+      section.codepen
+        <p data-height="750" data-theme-id="dark" data-slug-hash="mMYMbd" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/mMYMbd/">React Props - Example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      
+      section
+        h2 Component state
+        
+      section.code-with-title
+        h2 Initial state
+        .code-container
+          div
+            h4 Using createClass method
+            pre
+              code.language-javascript.
+                var Series = React.createClass({
+                  getInitialState: function() {
+                    return {
+                      likes: 0,
+                      // ...
+                    }
+                  },
+                  render: function() { /* ... */ }
+                });
+          div
+            h4 Using ES6 classes
+            pre
+              code.language-javascript.
+                class Series extends React.Component {
+                  constructor(props) {
+                    super(props);
+                    this.state = {
+                      likes: 0,
+                      //...
+                    }
+                  }
+                  render() { /* ... */ }
+                }
+    
+      section.code-with-title
+        h2 Change component state
+        .code-container.set-state
+          div.set-state-column
+            h4 setState Method
+            pre
+              code.language-javascript.
+                this.setState(nextState);
+            
+            ul
+              li Primary method to trigger UI updates unless <b>shouldComponentUpdate()</b> is false
+              li <b>Merge</b> the nextState into current state
+          div
+            h4 Example
+            pre
+              code.language-javascript.
+                  var Series = React.createClass({
+                    getInitialState: function() {
+                      return { likes: 0, /* ... */ }
+                    },
+                    like: function() {
+                      this.setState({
+                        likes: this.state.likes + 1
+                      })
+                    },
+                    //...
+                  });
+      
+      section.codepen
+        <p data-height="750" data-theme-id="dark" data-slug-hash="NvVwON" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/NvVwON/">React State - Example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        
+      section
+        h2 Component lifecycle
+      
+      section.code-with-title.lifecycle
+        .code-container
+          div
+            h4 Lifecycle callbacks
+            div.lifecycle-callbacks
+              pre.bullet
+                code.language-javascript.
+                  class component extends React.Component {  
+              pre.bullet
+                code.language-javascript.
+                    // called before the render method is executed
+                    componentWillMount() { /* ... */ },
+              pre.bullet
+                code.language-javascript.
+                    // called as soon as the render method is executed
+                    componentDidMount() { /* ... */ },
+              pre.bullet
+                code.language-javascript.
+                    // called first when props or state changed
+                    componentWillReceiveProps(nextProps) { /* ... */ },
+              pre.bullet
+                code.language-javascript.
+                    // if a re-rendering is needed or can be skipped
+                    shouldComponentUpdate(nextProps, nextState) { /* ... */ },
+              pre.bullet
+                code.language-javascript.
+                    // called as soon as the `shouldComponentUpdate` return true
+                    componentWillUpdate(nextProps, nextState) { /* ... */ },
+              pre.bullet
+                code.language-javascript.
+                    componentDidUpdate(nextProps, nextState) { /* ... */ },
+              pre.bullet
+                code.language-javascript.
+                    componentWillUnmount() { /* ... */ },
+              pre
+                code.language-javascript.
+                    render() { /* ... */ }
+              pre
+                code.language-javascript.
+                  };
+      
+      section.codepen
+        <p data-height="750" data-theme-id="dark" data-slug-hash="qXGpaw" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/qXGpaw/">React Lifecycle - Example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        
+      section
+        h2 Flux
+        br
+        h3 Flux is more of a pattern than a framework
+        
+      section(data-bespoke-backdrop='light')
+        h2.light Data flow
+        br
+        img(src="./images/flux.png")
+        
+      section.flux(data-bespoke-backdrop='light')
+        div.bullet
+          h2.light Flux cartoon guide by @linclark
+          br
+          img(src="./images/flux0.png")
+        div.bullet
+          h2.light User triggers an action
+          br
+          img(src="./images/flux1.png")
+        div.bullet
+          h2.light View tells the Action Creator to prepare the action
+          br
+          img(src="./images/flux2.png")
+        div.bullet
+          h2.light Action Creator formats the action and dispatch it
+          br
+          img(src="./images/flux3.png")
+        div.bullet
+          h2.light Dispatcher sends the action to the stores
+          br
+          img(src="./images/flux4.png")
+        div.bullet
+          h2.light Stores change the state and notifiy subscribed views controllers
+          br
+          img(src="./images/flux5.png")
+        div.bullet
+          h2.light View Controller ask for new state and updates the view
+          br
+          img(src="./images/flux6.png")
+          
+      section.codepen
+        <p data-height="750" data-theme-id="dark" data-slug-hash="prmpdL" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/prmpdL/">React + Flux - Example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>`
+      
+      section(data-bespoke-backdrop='redux')
+        h1
+          | Meet
+          b   Redux
+        br
+        h3 Single source of truth
+        
+      section
+        h2 1st principle of Redux
+        h3 The whole state of your app is stored in an object tree inside a single store
+        
+      section(style="height: 600px")
+        h3 State
+        pre
+          code.language-javascript.
+            {
+              SeriesArray: [
+                {
+                  id: 1,
+                  name: 'Game of Thrones',
+                  seasons: 6,
+                  likes: 0
+                },
+                // ...
+              ]
+            }
+    
+      section
+        h2 2nd principle of Redux
+        h3 The state is <b>read-only</b>. The only way to change the state tree is to emit an action, an object describing what happened.
+      
+      section
+        h2 Action
+        h3 Minimal representation of a state change
+        pre
+          code.language-javascript.
+            {
+              type: 'LIKE', // Type is mandatory
+              Series_id: 1,
+              // ...
+            }
+            
+      section
+        h2 3rd principle of Redux - Reducer function
+        h3 <b>Pure</b> function that describes how the state mutates based on the given action
+        
+      section.code-with-title
+        h2 Pure functions
+        h3 1 - Output depends only on the given arguments
+        h3 2 - Function doesn't mutate arguments
+        .code-container--centered
+          div(style='position:relative; margin-right:20px')
+            div(style="position: absolute; font-size: 56px; top: -20px; left: -20px;") 🚫
+            pre(style='width:450px; height:172px')
+              code.language-javascript.
+                function append(array, item) {
+                  item = api_call(item);
+                  return array.push(item);
+                }
+          div(style='position: relative; margin-left:20px')
+            div(style="position: absolute; font-size: 52px; top: -20px; left: -20px;") ✅
+            pre(style='width:450px; height:172px')
+              code.language-javascript.
+                function append(array, item) {
+                  return array.concat(item);
+                }
+      
+      section.reducer
+        div.bullet
+          h3 Array.reduce((accumulator, value) => accumulator)
+        div.bullet
+          h3
+            span.clear Array.
+            span reduce
+            span.clear (
+            span (accumulator, value) => accumulator
+            span.clear )
+        div.bullet
+          h3 reducer(state, action) => state
+      
+      section
+        pre
+          code.language-javascript.
+            const reducer = (state = 0, action) => {
+              switch(action.type) {
+                case 'LIKE':
+                  return state + action.increment
+                default:
+                  return state;
+              }
+            }
+    
+      section
+        h2 Store
+        h3 Binds Redux principles into one object
+        pre
+          code.language-javascript.
+            const store = Redux.createStore(reducer)
+    
+      section
+        h2 Store main methods
+        h3 getState()
+        p.secondary <b>Returns:</b> current state
+        h3 dispatch(action)
+        div.secondary
+          p <b>Arguments</b>: action to be dispatched
+          p <b>Returns:</b> dispatched action
+        h3 subscribe(callback)
+        p.secondary <b>Arguments</b>: callback that will be called any time an action is dispatched
+      
+      section.codepen
+        <p data-height="750" data-theme-id="dark" data-slug-hash="EvzQPx" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/EvzQPx/">React + Redux example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      
+      section
+        h2 Simple Todo App - React + Redux 
+      
+      section.codepen
+        <p data-height="750" data-theme-id="dark" data-slug-hash="ayrqVN" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/ayrqVN/">React + Redux example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+    
+      section
+        h2 Thanks!
+        
+    script(src='build/build.js')
