@@ -51,12 +51,8 @@ $(function () {
           title.html('2. Diff with the old one');
           break;
         case 3:
-          parent.addClass('step-4');
-          title.html('3. Minimal set of DOM mutations');
-          break;
-        case 4:
           parent.addClass('step-5');
-          title.html('4. Apply changes');
+          title.html('3. Apply changes');
           break;
         }
     }
