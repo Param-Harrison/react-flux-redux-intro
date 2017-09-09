@@ -11,7 +11,7 @@ html
         h1(style="margin-bottom: 50px") React + Flux + Redux Basics
         
         div.social
-          img(src="./images/github.png")
+          img(src=require("./images/github.png"))
           h4 Param-Harrison
           
         img(src="//jobbatical.com/img/jb_logo_white.svg" style="width: 170px; margin-top: 70px")
@@ -31,12 +31,12 @@ html
         
       section.virtual-dom
         h2.virtual-dom-steps
-        img.dom-1(src='./images/dom1.png')
-        img.substep.dom-2(src='./images/dom.png')
-        img.substep.dom-3(src='./images/dom3.png')
+        img.dom-1(src=require('./images/dom1.png'))
+        img.substep.dom-2(src=require('./images/dom.png'))
+        img.substep.dom-3(src=require('./images/dom3.png'))
         .substep.dom-5
-          img.osx-browser(src='./images/osx-browser.png')
-          img.dom-tree(src='./images/dom.png')
+          img.osx-browser(src=require('./images/osx-browser.png'))
+          img.dom-tree(src=require('./images/dom.png'))
         
       section(data-bespoke-backdrop='code-matrix')
         h2.emphasis What about the code?
@@ -438,37 +438,37 @@ html
       section(data-bespoke-backdrop='light')
         h2.light Data flow
         br
-        img(src="./images/flux.png")
+        img(src=require("./images/flux.png"))
         
       section.flux(data-bespoke-backdrop='light')
         div.bullet
           h2.light Flux cartoon guide by @linclark
           br
-          img(src="./images/flux0.png")
+          img(src=require("./images/flux0.png"))
         div.bullet
           h2.light User triggers an action
           br
-          img(src="./images/flux1.png")
+          img(src=require("./images/flux1.png"))
         div.bullet
           h2.light View tells the Action Creator to prepare the action
           br
-          img(src="./images/flux2.png")
+          img(src=require("./images/flux2.png"))
         div.bullet
           h2.light Action Creator formats the action and dispatch it
           br
-          img(src="./images/flux3.png")
+          img(src=require("./images/flux3.png"))
         div.bullet
           h2.light Dispatcher sends the action to the stores
           br
-          img(src="./images/flux4.png")
+          img(src=require("./images/flux4.png"))
         div.bullet
           h2.light Stores change the state and notifiy subscribed views controllers
           br
-          img(src="./images/flux5.png")
+          img(src=require("./images/flux5.png"))
         div.bullet
           h2.light View Controller ask for new state and updates the view
           br
-          img(src="./images/flux6.png")
+          img(src=require("./images/flux6.png"))
           
       section.codepen
         <p data-height="750" data-theme-id="dark" data-slug-hash="prmpdL" data-default-tab="js,result" data-user="Param-Harrison" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Param-Harrison/pen/prmpdL/">React + Flux - Example</a> by Param-Harrison (<a href="http://codepen.io/Param-Harrison">@Param-Harrison</a>) on <a href="http://codepen.io">CodePen</a>.</p>
