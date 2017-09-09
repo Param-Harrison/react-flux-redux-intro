@@ -1,7 +1,16 @@
-# React + Flux + Redux Workshop
-- https://paramlabs.github.io/react-flux-redux-workshop/
+# Presentation Template
 
-# References
-- [React Intro](https://blog.andrewray.me/reactjs-for-stupid-people/)
-- [Flux Intro](https://blog.andrewray.me/flux-for-stupid-people/)
-- [Binding to method in React class](http://egorsmirnov.me/2015/08/16/react-and-es6-part3.html)
+## View slides locally
+
+Install dependencies and run the preview server:
+
+```bash
+npm install
+npm start
+```
+
+Open http://localhost:8080/ in your browser.
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)

@@ -1,0 +1,223 @@
+.virtual-dom {
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+}
+
+.virtual-dom .substep.inactive {
+	display: none;
+}
+
+.virtual-dom img {
+	position: absolute;
+	width: 650px;
+	height: 410px;
+	transition-property: left, right, top;
+	-webkit-transition-property: left, right, top;
+	transition-duration: 1s;
+	-webkit-transition-duration: 1s;
+}
+
+.virtual-dom .virtual-dom-steps {
+	position: absolute;
+	width: 100%;
+	left: 0%;
+	top: 50px;
+	opacity: 0.5;
+	transition: all 1s ease;
+}
+
+.virtual-dom.step-1 .dom-1 {
+	top: calc(50% - 205px);
+	left: calc(50% - 275px);
+}
+
+.virtual-dom.step-2 .dom-1 {
+	top: calc(50% - 205px);
+	left: calc(50% - 600px);
+}
+
+.virtual-dom.step-2 .dom-2 {
+	opacity: 0;
+	top: calc(50% - 205px);
+	left: calc(50% - 50px);
+	-webkit-animation: fadeIn ease-in 1;
+	-moz-animation: fadeIn ease-in 1;
+	animation: fadeIn ease-in 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-duration: 0.7s;
+	-moz-animation-duration: 0.7s;
+	animation-duration: 0.7s;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+.virtual-dom.step-3 {
+	flex-direction: row;
+}
+
+.virtual-dom.step-3 .dom-1 {
+	top: calc(50% - 205px);
+	left: calc(50% - 325px);
+}
+
+.virtual-dom.step-3 .dom-2 {
+	top: calc(50% - 205px);
+	left: calc(50% - 325px);
+}
+
+.virtual-dom.step-3 .dom-3 {
+	opacity: 0;
+	top: calc(50% - 205px);
+	left: calc(50% - 325px);
+	-webkit-animation: fadeIn ease-in 1;
+	-moz-animation: fadeIn ease-in 1;
+	animation: fadeIn ease-in 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-duration: 0.7s;
+	-moz-animation-duration: 0.7s;
+	animation-duration: 0.7s;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+.virtual-dom.step-3 .dom-4 {
+	position: relative;
+	width: 440px;
+	height: 20%;
+}
+
+.virtual-dom.step-4 {
+	flex-direction: row;
+}
+
+.virtual-dom.step-4 .dom-1 {
+	display: none;
+}
+
+.virtual-dom.step-4 .dom-2 {
+	display: none;
+}
+
+.virtual-dom.step-4 .dom-3 {
+	top: -600px;
+	left: calc(50% - 325px);
+}
+
+.virtual-dom.step-4 .dom-4 {
+	position: relative;
+	width: 440px;
+	height: 20%;
+}
+
+.virtual-dom.step-5 {
+	flex-direction: row;
+}
+
+.virtual-dom.step-5 .dom-1 {
+	display: none;
+}
+
+.virtual-dom.step-5 .dom-2 {
+	display: none;
+}
+
+.virtual-dom.step-5 .dom-3 {
+	display: none;
+}
+
+.virtual-dom.step-5 .dom-4 {
+	display: none;
+}
+
+.virtual-dom.step-5 .dom-5 {
+	opacity: 0;
+	position: relative;
+	width: 650px;
+	height: 410px;
+	-webkit-animation: fadeIn ease-in 1;
+	-moz-animation: fadeIn ease-in 1;
+	animation: fadeIn ease-in 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-duration: 0.7s;
+	-moz-animation-duration: 0.7s;
+	animation-duration: 0.7s;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+.virtual-dom.step-5 .dom-5 img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.virtual-dom.step-5 .dom-5 .osx-browser {
+	top: -10px;
+}
+
+.virtual-dom.step-5 .dom-5 .dom-tree {
+	opacity: 0;
+	-webkit-animation: radius-enlarge ease-in 1;
+	-moz-animation: radius-enlarge ease-in 1;
+	animation: radius-enlarge ease-in 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-duration: 0.5s;
+	-moz-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	-webkit-animation-delay: 1.5s;
+	-moz-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+
+.dom-operation {
+	position: absolute;
+}
+
+.dom-operation__header {
+	opacity: 0;
+	position: inherit;
+	width: 30px;
+	height: 30px;
+	background: rgba(200,200,200,0.3);
+	border-radius: 50%;
+	-webkit-animation: radius-enlarge ease-in 1;
+	-moz-animation: radius-enlarge ease-in 1;
+	animation: radius-enlarge ease-in 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-duration: 0.5s;
+	-moz-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+}
+
+.dom-operation__body {
+	position: inherit;
+	left: 60px;
+	width: 0px;
+	height: 30px;
+	background: rgba(200,200,200,0.15);
+	-webkit-animation: enlarge ease-in 1;
+	-moz-animation: enlarge ease-in 1;
+	animation: enlarge ease-in 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-duration: 0.5s;
+	-moz-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+}

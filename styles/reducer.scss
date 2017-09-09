@@ -1,0 +1,35 @@
+.reducer {
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	margin: 0px;
+}
+
+.reducer .bespoke-bullet {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0%;
+	top: 0%;
+}
+
+.reducer .bespoke-bullet h3 {
+	font-size: 1.5em;
+}
+
+.reducer .bespoke-bullet h3 .clear {
+	opacity: 0.2;
+}
+
+.reducer .bespoke-bullet-active {
+	opacity: 0;
+}
+
+.reducer .bespoke-bullet-current {
+	opacity: 1;
+}

@@ -1,0 +1,46 @@
+.compelling {
+	width: 100%;
+	margin-left: 0px;
+	left: calc(50% - 475px);
+	-webkit-transition: left 1s;
+	transition: left 1s;
+	font-size: 26px;
+	color: rgba(255,255,255,0.15);
+	white-space: nowrap;
+}
+
+.declarative {
+	font-size: 36px;
+	left: calc(50% - 220px);
+}
+
+.declarative .declarative-substep {
+	color: #fff;
+}
+
+.predictable {
+	font-size: 36px;
+	left: calc(50% - 670px);
+}
+
+.predictable .predictable-substep {
+	color: #fff;
+}
+
+.confidence {
+	font-size: 36px;
+	left: calc(50% - 1110px);
+}
+
+.confidence .confidence-substep {
+	color: #fff;
+}
+
+.reliability {
+	font-size: 36px;
+	left: calc(50% - 1520px);
+}
+
+.reliability .reliability-substep {
+	color: #fff;
+}
