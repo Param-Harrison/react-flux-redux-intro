@@ -1,4 +1,4 @@
-# Presentation Template
+# React Flux Redux Basics - Slides
 
 ## View slides locally
 
